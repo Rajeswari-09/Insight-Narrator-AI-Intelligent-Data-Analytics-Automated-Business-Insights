@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insight Narrator AI — Agentic Data Analysis</title>
+  <meta name="description" content="Upload any CSV dataset and let autonomous AI agents analyze it, detect trends, generate charts, and write a narrative story about your data." />
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- Marked.js for markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo-icon">🧠</div>
+      <div class="logo-text">
+        <h1>Insight Narrator AI</h1>
+        <p>Agentic dataset analysis &amp; storytelling</p>
+      </div>
+      <div class="header-badge">Multi-Agent Pipeline Active</div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ────────────────────────────────────────────────────────────── -->
+<main class="container">
+
+  <!-- Upload Section -->
+  <section id="upload-section">
+    <div class="upload-zone glass-card" id="drop-zone" role="button" tabindex="0"
+         aria-label="Upload your dataset">
+      <span class="upload-icon">📊</span>
+      <h2>Drop your dataset here</h2>
+      <p>Support for CSV &amp; Excel files up to 50,000 rows</p>
+      <div>
+        <button class="btn-primary" id="browse-btn" type="button">
+          <span>📂</span> Browse Files
+        </button>
+        <button class="sample-btn" id="sample-btn" type="button">
+          🧪 Try Sample Dataset
+        </button>
+      </div>
+      <input type="file" id="file-input" accept=".csv,.xls,.xlsx" />
+    </div>
+  </section>
+
+  <!-- Loading Section -->
+  <section id="loading-section" aria-live="polite" aria-label="Analysis in progress">
+    <div class="loading-inner">
+      <div class="spinner"></div>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:1.3rem;margin-bottom:8px;">
+        Agents are analysing your data…
+      </h2>
+      <p id="loading-status">Initialising pipeline…</p>
+
+      <!-- Agent Pipeline Visual -->
+      <div class="agent-pipeline" id="agent-pipeline">
+        <div class="agent-node" id="node-analyzer">
+          <span class="agent-icon">🔬</span>
+          <span class="agent-label">Analyzer<br>Agent</span>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-node" id="node-visualizer">
+          <span class="agent-icon">📈</span>
+          <span class="agent-label">Visualizer<br>Agent</span>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-node" id="node-narrator">
+          <span class="agent-icon">✍️</span>
+          <span class="agent-label">Narrator<br>Agent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <div id="dashboard">
+
+    <!-- Reset Button -->
+    <button class="btn-reset" id="reset-btn" type="button">
+      ← Analyse Another Dataset
+    </button>
+
+    <!-- Dataset Overview -->
+    <section id="overview-section" style="margin-bottom:32px;">
+      <div class="section-header">
+        <div class="section-dot"></div>
+        <h2>Dataset Overview</h2>
+      </div>
+      <div class="overview-grid stagger" id="overview-grid"></div>
+    </section>
+
+    <!-- Pipeline Log -->
+    <section id="pipeline-section" style="margin-bottom:32px;">
+      <div class="section-header">
+        <div class="section-dot"></div>
+        <h2>Agent Pipeline Run</h2>
+      </div>
+      <div class="pipeline-log" id="pipeline-log"></div>
+    </section>
+
+    <!-- Key Insights -->
+    <section id="insights-section" style="margin-bottom:40px;">
+      <div class="section-header">
+        <div class="section-dot"></div>
+        <h2>Key Insights</h2>
+      </div>
+      <div class="insights-grid stagger" id="insights-grid"></div>
+    </section>
+
+    <!-- Visualizations -->
+    <section id="charts-section" style="margin-bottom:40px;">
+      <div class="section-header">
+        <div class="section-dot"></div>
+        <h2>Visualizations</h2>
+      </div>
+      <div class="charts-grid" id="charts-grid"></div>
+    </section>
+
+    <!-- Narrative Story -->
+    <section id="narrative-section">
+      <div class="section-header">
+        <div class="section-dot"></div>
+        <h2>AI-Generated Narrative</h2>
+      </div>
+      <div class="narrative-card glass-card">
+        <div id="narrative-source" class="narrative-source">✨ Generating…</div>
+        <div class="narrative-sections" id="narrative-sections"></div>
+      </div>
+    </section>
+
+  </div><!-- /#dashboard -->
+
+</main>
+
+<!-- ── Error Toast ──────────────────────────────────────────────────────── -->
+<div id="error-toast" role="alert"></div>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    Insight Narrator AI &nbsp;·&nbsp; Agentic Analysis Pipeline &nbsp;·&nbsp;
+    Powered by FastAPI + OpenAI
+  </div>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
