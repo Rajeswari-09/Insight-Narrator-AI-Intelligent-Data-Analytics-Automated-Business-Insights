@@ -290,6 +290,18 @@ GET /
 ```
 
 Serves the Insight Narrator AI dashboard.
+## Screenshots
+### Dashboard
+<img width="1907" height="937" alt="dashboard" src="https://github.com/user-attachments/assets/cec87fd9-f973-40a7-a444-da4c254ca61a" />
+
+### Analysis Results
+<img width="1811" height="792" alt="Analysis" src="https://github.com/user-attachments/assets/ca0a39de-850d-4289-92fe-7d1508c162de" />
+
+### Visualizations
+<img width="950" height="765" alt="Visualisations" src="https://github.com/user-attachments/assets/6851d537-f0a2-4ef8-b7c1-a37a04478b52" />
+
+### AI Insights
+<img width="1340" height="777" alt="AI-Insights" src="https://github.com/user-attachments/assets/9b527840-288c-4479-8cb6-3a25c70c342a" />
 
 ## Installation
 
